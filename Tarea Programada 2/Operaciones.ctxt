@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=Operaciones
+comment1.params=
+comment1.target=Operaciones()
+comment2.params=
+comment2.target=boolean\ esVacia()
+comment3.params=
+comment3.target=int\ getTamanio()
+numComments=4

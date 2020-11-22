@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.target=Nodo
+comment1.params=
+comment1.target=void\ Nodo()
+comment2.params=
+comment2.target=int\ getValor()
+comment3.params=valor
+comment3.target=void\ setValor(int)
+comment4.params=
+comment4.target=int\ getIncognita()
+comment5.params=incognita
+comment5.target=void\ setIncognita(int)
+comment6.params=
+comment6.target=int\ getPotencia()
+comment7.params=potencia
+comment7.target=void\ setPotencia(int)
+numComments=8
