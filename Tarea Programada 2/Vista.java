@@ -1,4 +1,4 @@
-
+ import javax.swing.JOptionPane;
 /**
  * Write a description of class Vista here.
  *
@@ -7,27 +7,19 @@
  */
 public class Vista
 {
-    // instance variables - replace the example below with your own
-    private int x;
-
-    /**
-     * Constructor for objects of class Vista
-     */
-    public Vista()
+    public boolean solicitarEntradaDeDatos()
     {
-        // initialise instance variables
-        x = 0;
-    }
+        Object opcionmenu = JOptionPane.showInputDialog(null,"C A L C U L A D O R A ",
+                    "De que manera desea ingresar los datos a la calculadora?", JOptionPane.QUESTION_MESSAGE, null,
+                    new Object[] {"Introducir datos manualmente","Ingresar datos a través de .txt"},
+                    "Seleccione");
 
-    /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
-    public int sampleMethod(int y)
-    {
-        // put your code here
-        return x + y;
+        if (opcionmenu == "Introducir Datos Manualmente"){
+         return false;
+        }
+        return true;
+        }
+    public void introducirDatosManual()
+     {}     
+    
     }
-}
