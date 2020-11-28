@@ -24,6 +24,36 @@ public class Vista
         else{solicitarEntradaDeDatos();}
         return solicitarEntradaDeDatos();
     }
-    
+
+    public void solicitarOperando()
+    {
+        boolean volverAlMenu = false;
+        String operando;
+        while(volverAlMenu == true){
+            operando= JOptionPane.showInputDialog("Digite la incognita");
+            
+            if (operando == "+")
+            {
+                volverAlMenu = false;
+                //agregar nodo a la lista 
+            }
+            if (operando == "-")
+            {
+                volverAlMenu = false;
+                //agregar nodo a la lista 
+            }
+            if (operando == "*")
+            {
+                volverAlMenu = false;
+                //agregar nodo a la lista 
+            }
+            if (operando == "/")
+            {
+                volverAlMenu = false;
+                //agregar nodo a la lista 
+            }
+            
+        }
+    }
 }
 
