@@ -5,6 +5,12 @@ public class Lector
 {
     private BufferedReader lector;
     private boolean enUso;
+    private String nombre;
+    
+    public String pedirNombre(){
+        
+        return nombre;
+    }
 
     public Lector(String ruta)
     {
