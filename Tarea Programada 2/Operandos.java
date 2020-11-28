@@ -8,43 +8,77 @@
 public class Operandos
 {
     // instance variables - replace the example below with your own
-    private NodoOperandos inicio;
+    private NodoOperandos inicioOperandos;
     private int tamanio;
 
     public void Lista()
     {
-        inicio = null;
+        inicioOperandos = null;
         tamanio = 0;
     }
 
     public boolean esVacia()
     {
-        return inicio == null;
+        return inicioOperandos == null;
     }
     
     public int getTamanio()
     {
         return tamanio;
     }
-    public void agregarAlFinal(String operando)
+    
+    public void imprimirLista()
+    {
+        if(!esVacia())
+        {
+            NodoOperandos auxiliarOperandos = inicioOperandos;
+            int posicion = 0;
+            
+            while(auxiliarOperandos.getSiguiente() != null)
+            {
+                System.out.println("Posicion: " + posicion + " Valor: " + auxiliarOperandos.getOperando());
+                auxiliarOperandos = auxiliarOperandos.getSiguiente();
+                posicion++;
+            }
+            
+            System.out.println("Posicion: " + posicion + " Valor: " + auxiliarOperandos.getOperando());
+        }
+    }
+    public void imprimirOperandoSolicitado(int posicion)
+    {   
+            NodoOperandos auxiliarOperandos = inicioOperandos;
+            if (posicion >= 0 && posicion <= tamanio) 
+            {
+                for (int i = 0; i<posicion ;i++)
+                {
+                    auxiliarOperandos  = auxiliarOperandos.getSiguiente();
+                }
+                System.out.println(auxiliarOperandos.getOperando());
+            }
+            
+        
+        
+    
+    }
+    public void agregarOperando(String operando)
     {
         NodoOperandos nuevoNodo = new NodoOperandos();
         nuevoNodo.setOperando(operando);
         
         if(esVacia())
         {
-            inicio = nuevoNodo;
+            inicioOperandos = nuevoNodo;
         }
         else
         {
-            NodoOperandos auxiliar = inicio;
+            NodoOperandos auxiliarOperandos = inicioOperandos;
             
-            while(auxiliar.getSiguiente() != null)
+            while(auxiliarOperandos.getSiguiente() != null)
             {
-                auxiliar = auxiliar.getSiguiente();
+                auxiliarOperandos = auxiliarOperandos.getSiguiente();
             }
             
-            auxiliar.setSiguiente(nuevoNodo);
+            auxiliarOperandos.setSiguiente(nuevoNodo);
         }
         
         tamanio++;
