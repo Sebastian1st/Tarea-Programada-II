@@ -21,6 +21,7 @@ public class Vista
         if (opcionmenu == "Ingresar datos a través de .txt"){
             return false;
         }
+        else{solicitarEntradaDeDatos();}
         return solicitarEntradaDeDatos();
     }
     

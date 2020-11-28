@@ -21,9 +21,9 @@ public class Controlador
             {   
                 //Define las variables para agregar un nodo 
                 contador++;
-                valor = Integer.parseInt(JOptionPane.showInputDialog("digite el valor"));
-                incognita = JOptionPane.showInputDialog("digite la incognita");
-                potencia = Integer.parseInt(JOptionPane.showInputDialog("A que potencia esta elevada la potencia anterior?"));
+                valor = Integer.parseInt(JOptionPane.showInputDialog("Digite el valor"));
+                incognita = JOptionPane.showInputDialog("Digite la incognita");
+                potencia = Integer.parseInt(JOptionPane.showInputDialog("A que potencia esta elevada la incógnita anterior?"));
                 // agregar un nodo a la lista
                 operaciones.agregarAlFinal(valor,incognita,potencia);
                 //consulta al usuario si desea agregar mas nodos
@@ -40,10 +40,13 @@ public class Controlador
             }
 
         }
-        //si es ingreso por archivo
-        if (vista.solicitarEntradaDeDatos() == false)
+        else
         {
+            String nombre;
+            nombre = JOptionPane.showInputDialog("Escriba el nombre del archivo");
+            Lector lector = new Lector(nombre);
 
+            System.out.print(lector.leerArchivo());
         }
 
     }
