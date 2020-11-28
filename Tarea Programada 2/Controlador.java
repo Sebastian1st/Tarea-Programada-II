@@ -8,7 +8,7 @@ public class Controlador
         Operaciones operaciones = new Operaciones(); 
         int contador = 0;
         //si es ingreso Manual 
-        
+
         if (vista.solicitarEntradaDeDatos() == true)
         {
 
@@ -32,7 +32,7 @@ public class Controlador
                         new Object[] { "Sí","No",},
                         "Sí");
 
-                if (opcionmenu == "Salir"){
+                if (opcionmenu == "No"){
                     JOptionPane.showMessageDialog(null,"Has ingresado "+contador + "ecuaciones" );
                     contador= 0;
                     volverAlMenu=false;
