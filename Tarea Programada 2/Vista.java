@@ -1,4 +1,4 @@
- import javax.swing.JOptionPane;
+import javax.swing.JOptionPane;
 /**
  * Write a description of class Vista here.
  *
@@ -9,17 +9,20 @@ public class Vista
 {
     public boolean solicitarEntradaDeDatos()
     {
-        Object opcionmenu = JOptionPane.showInputDialog(null,"C A L C U L A D O R A ",
-                    "De que manera desea ingresar los datos a la calculadora?", JOptionPane.QUESTION_MESSAGE, null,
-                    new Object[] {"Introducir datos manualmente","Ingresar datos a través de .txt"},
-                    "Seleccione");
 
-        if (opcionmenu == "Introducir Datos Manualmente"){
-         return false;
+        Object opcionmenu = JOptionPane.showInputDialog(null,"C A L C U L A D O R A ",
+                "De que manera desea ingresar los datos a la calculadora?", JOptionPane.QUESTION_MESSAGE, null,
+                new Object[] {"Introducir datos manualmente","Ingresar datos a través de .txt"},
+                "Seleccione");
+
+        if (opcionmenu == "Introducir datos manualmente"){
+            return true;
         }
-        return true;
+        if (opcionmenu == "Ingresar datos a través de .txt"){
+            return false;
         }
-    public void introducirDatosManual()
-     {}     
-    
+        return solicitarEntradaDeDatos();
     }
+    
+}
+

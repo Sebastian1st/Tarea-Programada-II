@@ -1,13 +1,11 @@
 #BlueJ class context
 comment0.target=Lector
-comment1.params=
-comment1.target=java.lang.String\ pedirNombre()
-comment2.params=ruta
-comment2.target=Lector(java.lang.String)
+comment1.params=ruta
+comment1.target=Lector(java.lang.String)
+comment2.params=
+comment2.target=void\ cerrar()
 comment3.params=
-comment3.target=void\ cerrar()
+comment3.target=java.lang.String\ leerLinea()
 comment4.params=
-comment4.target=java.lang.String\ leerLinea()
-comment5.params=
-comment5.target=java.lang.String\ leerArchivo()
-numComments=6
+comment4.target=java.lang.String\ leerArchivo()
+numComments=5

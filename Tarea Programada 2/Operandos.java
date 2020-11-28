@@ -1,15 +1,22 @@
 
-public class Operaciones
+/**
+ * Write a description of class Operandos here.
+ *
+ * @author (your name)
+ * @version (a version number or a date)
+ */
+public class Operandos
 {
-    private Nodo inicio;
+    // instance variables - replace the example below with your own
+    private NodoOperandos inicio;
     private int tamanio;
 
-    public Operaciones()
+    public void Lista()
     {
         inicio = null;
         tamanio = 0;
     }
-    
+
     public boolean esVacia()
     {
         return inicio == null;
@@ -19,15 +26,10 @@ public class Operaciones
     {
         return tamanio;
     }
-    
-    public void agregarAlFinal(int valor, String incognita,int potencia)
+    public void agregarAlFinal(String operando)
     {
-        Nodo nuevoNodo = new Nodo();
-        nuevoNodo.setValor(valor);
-        nuevoNodo.setIncognita(incognita);
-        nuevoNodo.setPotencia(potencia);
-        
-        
+        NodoOperandos nuevoNodo = new NodoOperandos();
+        nuevoNodo.setOperando(operando);
         
         if(esVacia())
         {
@@ -35,7 +37,7 @@ public class Operaciones
         }
         else
         {
-            Nodo auxiliar = inicio;
+            NodoOperandos auxiliar = inicio;
             
             while(auxiliar.getSiguiente() != null)
             {

@@ -6,4 +6,6 @@ comment2.params=
 comment2.target=boolean\ esVacia()
 comment3.params=
 comment3.target=int\ getTamanio()
-numComments=4
+comment4.params=valor\ incognita\ potencia
+comment4.target=void\ agregarAlFinal(int,\ java.lang.String,\ int)
+numComments=5
