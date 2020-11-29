@@ -1,13 +1,12 @@
 public class NodoOperandos
 {
-    private NodoOperandos siguiente;
-    
-    private String operando;
     
 
+    private String operando;
+    private NodoOperandos siguiente;
     public void NodoOperandos()
     {
-        
+
         this.operando = "";
         this.siguiente = null;
     }
@@ -26,11 +25,10 @@ public class NodoOperandos
     {
         return siguiente;
     }
-    
+
     public void setSiguiente(NodoOperandos siguiente)
     {
         this.siguiente = siguiente;
     }
 
-    
-    }
+}

@@ -1,7 +1,7 @@
 #BlueJ class context
 comment0.target=NodoOperandos
 comment1.params=
-comment1.target=void\ Nodo()
+comment1.target=void\ NodoOperandos()
 comment2.params=
 comment2.target=java.lang.String\ getOperando()
 comment3.params=operando

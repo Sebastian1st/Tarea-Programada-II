@@ -84,14 +84,15 @@ public class Controlador
                     }
                 }
             }   
-            operaciones.imprimirLista();
+            //operaciones.imprimirLista();
             operandos.imprimirLista();
+            operandos.imprimirOperandoSolicitado(0);
         }
         else
         {
             String nombre;
             nombre = JOptionPane.showInputDialog("Escriba el nombre del archivo");
-            Lector lector = new Lector(nombre);
+            Lector lector = new Lector("C:/Users/sebas/OneDrive/Desktop/Tarea-Programada-II/Tarea Programada 2/Archivos/"+ nombre);
 
             System.out.print(lector.leerArchivo());
         }

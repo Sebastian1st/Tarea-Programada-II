@@ -2,7 +2,7 @@
 public class Operaciones
 {
     private Nodo inicio;
-    private NodoOperandos inicioOperandos;
+    
     private int tamanio;
     
     public Operaciones()
@@ -56,16 +56,16 @@ public class Operaciones
         if(!esVacia())
         {
             Nodo auxiliar = inicio;
-            NodoOperandos auxiliarOperandos = inicioOperandos;
+            
             int posicion = 0;
             
             while(auxiliar.getSiguiente() != null)
             {
-                
-                if (contador != 0 && auxiliarOperandos.getSiguiente() != null)
+                //2x^2 + 2x^4
+                if (contador != 0 )
                 {
-                    //operandos.imprimirOperandoSolicitado(contador);
-                    auxiliarOperandos= auxiliarOperandos.getSiguiente();
+                    operandos.imprimirOperandoSolicitado(contador);
+                    System.out.print(auxiliar.getValor()+auxiliar.getIncognita()+"^"+ auxiliar.getPotencia()+" ");
                     contador++;
                 }
                 else
@@ -80,8 +80,8 @@ public class Operaciones
                 
             }
             //LLamar un metodo que imprime el operando
-            //operandos.imprimirOperandoSolicitado(contador);
-            
+            operandos.imprimirOperandoSolicitado(contador);
+            contador++;
             System.out.print(auxiliar.getValor()+auxiliar.getIncognita()+"^"+ auxiliar.getPotencia()+" ");
         }
     }

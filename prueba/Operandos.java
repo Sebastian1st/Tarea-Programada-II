@@ -11,7 +11,7 @@ public class Operandos
     private NodoOperandos inicioOperandos;
     private int tamanio;
 
-    public void NodoOperandos()
+    public void Operandos()
     {
         inicioOperandos = null;
         tamanio = 0;

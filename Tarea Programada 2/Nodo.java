@@ -11,6 +11,7 @@ public class Nodo
         this.valor = 0;
         this.incognita = "";
         this.potencia = 0;
+        this.siguiente = null;
     }
 
     public int getValor()
