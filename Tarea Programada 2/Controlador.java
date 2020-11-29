@@ -82,11 +82,30 @@ public class Controlador
                         JOptionPane.showMessageDialog(null,"Has ingresado "+contador + " ecuaciones." );   
                         volverAlMenu=false;
                     }
+                    
+                    
                 }
             }   
-            //operaciones.imprimirLista();
-            operandos.imprimirLista();
-            operandos.imprimirOperandoSolicitado(0);
+            //PARA ESTA PARTE YA SE CREO LA ECUACION
+            
+            
+            //MOSTRAR ORDENADA LA ECUACION 
+            for (int i=0;i<contador;i++)
+            {
+                if (i==0)
+                {
+                    operaciones.imprimirDatoDeLista(i);
+                }
+                else{
+                    operandos.imprimirDatoDeLista(i-1);
+                    operaciones.imprimirDatoDeLista(i);
+                }
+            }
+            
+            //CALCULO
+            
+            
+            
         }
         else
         {

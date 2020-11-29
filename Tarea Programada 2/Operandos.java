@@ -21,51 +21,50 @@ public class Operandos
     {
         return inicioOperandos == null;
     }
-    
+
     public int getTamanio()
     {
         return tamanio;
     }
-    
+
     public void imprimirLista()
     {
         if(!esVacia())
         {
             NodoOperandos auxiliarOperandos = inicioOperandos;
             int posicion = 0;
-            
+
             while(auxiliarOperandos.getSiguiente() != null)
             {
                 System.out.println("Posicion: " + posicion + " Valor: " + auxiliarOperandos.getOperando());
                 auxiliarOperandos = auxiliarOperandos.getSiguiente();
                 posicion++;
             }
-            
+
             System.out.println("Posicion: " + posicion + " Valor: " + auxiliarOperandos.getOperando());
         }
     }
-    public void imprimirOperandoSolicitado(int posicion)
-    {   
-        NodoOperandos auxiliarOperandos = inicioOperandos;    
-        
-            if (posicion >= 0 && posicion <= tamanio) 
+    public void imprimirDatoDeLista(int posicion)
+    {
+        Operandos operandos = new Operandos();
+
+        if(!esVacia())
+        {
+            NodoOperandos auxiliar = inicioOperandos;
+            for (int i = 0; i<posicion; i++)
             {
-                for (int i = 0; i<posicion ;i++)
-                {
-                    auxiliarOperandos  = auxiliarOperandos.getSiguiente();
-                }
-                System.out.println(auxiliarOperandos.getOperando());
+                auxiliar = auxiliar.getSiguiente();
             }
-            
-        
-        
-    
+
+            System.out.print(auxiliar.getOperando()+" ");
+
+        }
     }
     public void agregarOperando(String operando)
     {
         NodoOperandos nuevoNodo = new NodoOperandos();
         nuevoNodo.setOperando(operando);
-        
+
         if(esVacia())
         {
             inicioOperandos = nuevoNodo;
@@ -73,15 +72,15 @@ public class Operandos
         else
         {
             NodoOperandos auxiliarOperandos = inicioOperandos;
-            
+
             while(auxiliarOperandos.getSiguiente() != null)
             {
                 auxiliarOperandos = auxiliarOperandos.getSiguiente();
             }
-            
+
             auxiliarOperandos.setSiguiente(nuevoNodo);
         }
-        
+
         tamanio++;
     }
 }
