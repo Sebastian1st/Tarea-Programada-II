@@ -1,12 +1,17 @@
-package com.company;
+//Scanner
 import java.util.*;
-
+/**
+ * Write a description of class Main here.
+ *
+ * @Sebastián Soto y Alessandro Pani
+ * @version (a version number or a date)
+ */
 public class Main {
 
     public static void main(String[] args) {
 
         boolean corriendo = true;
-        Scanner sc= new Scanner(System.in);    //System.in is a standard input stream
+        Scanner sc= new Scanner(System.in);
         Lector lector = new Lector();
         Calculadora calcu = new Calculadora();
         Escritor escritor = new Escritor();
@@ -20,8 +25,9 @@ public class Main {
             System.out.println();
             System.out.print("Ingrese el número de la opcion: ");
             int opcion = sc.nextInt();
-
+            //diferentes opciones
             switch (opcion) {
+                //Entrada de usuario
                 case 1:
                     System.out.println("Las ecuaciones deben tener la forma Ax^b+Bx^c. Se asume que la variable siempre sera X. Si el exponente es 1, se debe indicar como Ax^1.");
                     System.out.println("Ingrese la primera ecuacion: ");
@@ -54,6 +60,7 @@ public class Main {
                             System.err.println("Se ha producido un error. Revise sus entradas e intentelo de nuevo");
                         }
                     break;
+                //Entrada de archivo
                 case 2:
                     System.out.println("Las ecuaciones deben ser de la forma ECUACION|OPERADOR|ECUACION");
                     System.out.println("Ingrese el nombre del archivo donde se encuentra la ecuacion. Se debe encontrar en la carpeta de Archivos: ");
@@ -68,36 +75,21 @@ public class Main {
                         System.err.println("Se ha producido un error. Revise sus entradas e intentelo de nuevo");
                     }
                     break;
+                //Instrucciones
                 case 3:
-                    System.out.println("Instrucciones");
+                    System.out.println("Cuando el sistema le indique, escriba el numero de la opcion que desea ejecutar.");
+                    System.out.println("Tome en cuenta que: ");
+                    System.out.println("Las ecuaciones deben tener la forma Ax^b+Bx^c. Se asume que la variable siempre sera X. Si el exponente es 1, se debe indicar como Ax^1.");
+                    System.out.println("Para la lectura desde archivos, las ecuaciones deben ser de la forma ECUACION|OPERADOR|ECUACION");
+
                     break;
+                //Salir
                 case 4:
                     corriendo = false;
+                    System.out.println("Gracias por usarme :D");
                     break;
             }
             System.out.println();
-        }
-
-        if(false) {
-            System.out.println("Hello World!");
-
-            Ecuacion ecua = new Ecuacion();
-
-
-            ecua = lector.separarElementos("4x^2");
-            Ecuacion ecua2 = lector.separarElementos("5x^3");
-
-
-            Ecuacion resultado = calcu.operar(ecua, ecua2, "/");
-
-
-            try {
-                System.out.println(resultado.aString());
-            } catch (Exception e) {
-                System.err.println(e);
-            }
-
-            escritor.escribir("nombre", ecua, ecua2, "/", resultado);
         }
 
     }

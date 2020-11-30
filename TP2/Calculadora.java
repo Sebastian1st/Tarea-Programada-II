@@ -1,10 +1,11 @@
-package com.company;
-
-import javax.annotation.processing.SupportedSourceVersion;
-import java.awt.*;
-
+/**
+ *  Calculadora del programa
+ *
+ * @Sebastián Soto y Alessandro Pani
+ * @version (a version number or a date)
+ */
 public class Calculadora {
-
+    //operar entre ecuaciones
     public Ecuacion operar(Ecuacion ecua1, Ecuacion ecua2, String operador){
 
         if(operador.equals("+")){
@@ -25,10 +26,11 @@ public class Calculadora {
             return null;
         }
     }
-
+    //suma 
     private Ecuacion sumarEcuaciones(Ecuacion ecua1, Ecuacion ecua2){
 
         Ecuacion resultado = new Ecuacion();
+
         for (int i = 0; i < ecua1.tamano; i++) {
             Nodo nodo = ecua1.getNodo(i);
 
@@ -49,7 +51,7 @@ public class Calculadora {
         return ecuaFinal;
 
     }
-
+    //resta
     private Ecuacion restarEcuaciones(Ecuacion ecua1, Ecuacion ecua2){
 
         Ecuacion resultado = new Ecuacion();
@@ -73,7 +75,7 @@ public class Calculadora {
         return ecuaFinal;
 
     }
-
+    //multplicacion
     private Ecuacion multiplicarEcuaciones(Ecuacion ecua1, Ecuacion ecua2){
 
         Ecuacion resultado = new Ecuacion();
@@ -98,7 +100,7 @@ public class Calculadora {
         return simplificada;
 
     }
-
+    //division
     private Ecuacion dividirEcuaciones(Ecuacion ecua1, Ecuacion ecua2){
 
         if(ecua1.tamano > 1 || ecua2.tamano > 1){
@@ -122,6 +124,6 @@ public class Calculadora {
 
         }
     }
-
+    
 
 }

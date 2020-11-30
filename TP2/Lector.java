@@ -1,9 +1,12 @@
-package com.company;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
-
+/**
+ *Lector
+ *
+ * @Sebastián Soto y Alessandro Pani
+ * @version (a version number or a date)
+ */
 public class Lector {
 
     public String quitarEspacios(String ecua){
@@ -39,8 +42,7 @@ public class Lector {
 
     private Ecuacion ecuacionDeArchivo(String datos){
         Escritor escritor = new Escritor();
-        Scanner sc= new Scanner(System.in);    //System.in is a standard input stream
-
+        Scanner sc= new Scanner(System.in);   
         String elementos[] = datos.split("\\|");
         Ecuacion ecua1 = this.separarElementos(elementos[0]);
         String operador = elementos[1];

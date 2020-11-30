@@ -1,9 +1,14 @@
-package com.company;
-
+/**
+ * Ecuacion (Lista enlazada)
+ *
+ * @Sebastián Soto y Alessandro Pani
+ * @version (a version number or a date)
+ */
 public class Ecuacion{
+    //nodo inicio// raiz
     Nodo root;
     int tamano = 0;
-
+    
     public void agregarNodo(int valor, String variable, int potencia){
         Nodo nuevoNodo = new Nodo(valor, variable, potencia);
 
@@ -194,6 +199,5 @@ public class Ecuacion{
 
         return max;
     }
-
 
 }

@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=Calculadora
+comment1.params=ecua1\ ecua2\ operador
+comment1.target=Ecuacion\ operar(Ecuacion,\ Ecuacion,\ java.lang.String)
+comment2.params=ecua1\ ecua2
+comment2.target=Ecuacion\ sumarEcuaciones(Ecuacion,\ Ecuacion)
+comment3.params=ecua1\ ecua2
+comment3.target=Ecuacion\ restarEcuaciones(Ecuacion,\ Ecuacion)
+comment4.params=ecua1\ ecua2
+comment4.target=Ecuacion\ multiplicarEcuaciones(Ecuacion,\ Ecuacion)
+comment5.params=ecua1\ ecua2
+comment5.target=Ecuacion\ dividirEcuaciones(Ecuacion,\ Ecuacion)
+numComments=6

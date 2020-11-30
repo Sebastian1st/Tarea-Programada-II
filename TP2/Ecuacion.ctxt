@@ -1,0 +1,21 @@
+#BlueJ class context
+comment0.target=Ecuacion
+comment1.params=valor\ variable\ potencia
+comment1.target=void\ agregarNodo(int,\ java.lang.String,\ int)
+comment2.params=nuevoNodo
+comment2.target=void\ agregarNodo(Nodo)
+comment3.params=
+comment3.target=void\ imprimirEcuacion()
+comment4.params=actual\ ind
+comment4.target=void\ imprimirEcuacion_aux(Nodo,\ int)
+comment5.params=
+comment5.target=Ecuacion\ simplificar()
+comment6.params=
+comment6.target=java.lang.String\ aString()
+comment7.params=actual\ ind\ ecuacion
+comment7.target=java.lang.String\ aString_aux(Nodo,\ int,\ java.lang.String)
+comment8.params=ind
+comment8.target=Nodo\ getNodo(int)
+comment9.params=
+comment9.target=int\ getMaxExponente()
+numComments=10
