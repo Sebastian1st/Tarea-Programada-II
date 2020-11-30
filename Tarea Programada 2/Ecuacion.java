@@ -46,13 +46,21 @@ public class Ecuacion{
 
     public void imprimirEcuacion_aux(Nodo actual, int ind){
 
+        if(this.tamano==0){
+            System.out.println(0);
+        }
+
         if(actual == null){
+            System.out.println();
             return;
         }
 
         if(actual.incognita.equals("") || actual.potencia == 0){
 
             if(actual.valor < 0){
+                System.out.print(Float.toString(actual.valor));
+            }
+            else if(ind == 0){
                 System.out.print(Float.toString(actual.valor));
             }
             else{
@@ -123,6 +131,9 @@ public class Ecuacion{
     }
 
     private String aString_aux(Nodo actual, int ind, String ecuacion){
+        if(this.tamano==0){
+            ecuacion += "0";
+        }
         if(actual == null){
             return ecuacion;
         }

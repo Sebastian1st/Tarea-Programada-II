@@ -1,5 +1,9 @@
 package com.company;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
 public class Lector {
 
     public String quitarEspacios(String ecua){
@@ -13,6 +17,48 @@ public class Lector {
                 resultado = resultado + ecua.substring(i, i+1);
             }
         }
+
+        return resultado;
+    }
+
+    public Ecuacion leerDeArchivo(String nombre){
+        try {
+            File myObj = new File("Archivos/"+nombre);
+            Scanner myReader = new Scanner(myObj);
+            while (myReader.hasNextLine()) {
+                String datos = myReader.nextLine();
+                return this.ecuacionDeArchivo(datos);
+            }
+            myReader.close();
+        } catch (FileNotFoundException e) {
+            System.out.println("No se encontro el archivo indicado");
+            return null;
+        }
+        return null;
+    }
+
+    private Ecuacion ecuacionDeArchivo(String datos){
+        Escritor escritor = new Escritor();
+        Scanner sc= new Scanner(System.in);    //System.in is a standard input stream
+
+        String elementos[] = datos.split("\\|");
+        Ecuacion ecua1 = this.separarElementos(elementos[0]);
+        String operador = elementos[1];
+        Ecuacion ecua2 = this.separarElementos(elementos[2]);
+
+
+        Calculadora calcu = new Calculadora();
+
+        Ecuacion resultado = calcu.operar(ecua1, ecua2, operador);
+
+        System.out.println("Resultado:");
+        resultado.imprimirEcuacion();
+
+        System.out.println("Ingrese el nombre del archivo para almacenar el resultado: ");
+        String nombre = sc.nextLine();
+
+        escritor.escribir(nombre, ecua1, ecua2, operador, resultado);
+        System.out.println("El archivo se creara al terminar la ejecucion");
 
         return resultado;
     }
@@ -125,8 +171,7 @@ public class Lector {
             }
         }
 
-        int valor = Integer.valueOf(numString);
-
+        float valor = Float.valueOf(numString);
         if(esNegativo){
             valor = -1*valor;
         }
@@ -156,7 +201,7 @@ public class Lector {
             potencia = 0;
         }
 
-        if(incognita.equals(Integer.toString(valor))){
+        if(incognita.equals(Float.toString(valor))){
             incognita = "";
         }
 
