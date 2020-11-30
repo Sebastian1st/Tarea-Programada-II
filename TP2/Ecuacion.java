@@ -26,7 +26,7 @@ public class Ecuacion{
 
         }
     }
-
+    //AGREGA NODO 
     public void agregarNodo(Nodo nuevoNodo){
 
         if(root == null){
@@ -44,11 +44,11 @@ public class Ecuacion{
 
         }
     }
-
+    //imprime ecuacion
     public void imprimirEcuacion(){
         imprimirEcuacion_aux(root, 0);
     }
-
+    //imprimir ecuacion auxiliar
     public void imprimirEcuacion_aux(Nodo actual, int ind){
 
         if(this.tamano==0){
@@ -95,7 +95,7 @@ public class Ecuacion{
 
         imprimirEcuacion_aux(actual,ind);
     }
-
+    //SIMPLICACION
     public Ecuacion simplificar(){
 
         Ecuacion resultado = new Ecuacion();
@@ -129,12 +129,12 @@ public class Ecuacion{
         return resultado;
 
     }
-
+    //hace string la ecuacion
     public String aString(){
         String ecuacion = "";
         return aString_aux(root, 0, ecuacion);
     }
-
+    //hace string la ecuacion auxiliar
     private String aString_aux(Nodo actual, int ind, String ecuacion){
         if(this.tamano==0){
             ecuacion += "0";
@@ -186,7 +186,7 @@ public class Ecuacion{
 
         return actual;
     }
-
+    //BUSCA el mayor exponente
     private int getMaxExponente(){
 
         int max = 0;

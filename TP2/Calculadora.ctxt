@@ -1,5 +1,6 @@
 #BlueJ class context
 comment0.target=Calculadora
+comment0.text=\r\n\ \ Calculadora\ del\ programa\r\n\r\n\ @Sebasti\u00E1n\ Soto\ y\ Alessandro\ Pani\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
 comment1.params=ecua1\ ecua2\ operador
 comment1.target=Ecuacion\ operar(Ecuacion,\ Ecuacion,\ java.lang.String)
 comment2.params=ecua1\ ecua2

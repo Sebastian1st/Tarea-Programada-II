@@ -1,5 +1,6 @@
 #BlueJ class context
 comment0.target=Nodo
+comment0.text=\r\nNodos\ de\ la\ lista\r\n\r\n\ @Sebasti\u00E1n\ Soto\ y\ Alessandro\ Pani\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
 comment1.params=valor\ variable\ potencia
 comment1.target=Nodo(float,\ java.lang.String,\ int)
 comment10.params=next

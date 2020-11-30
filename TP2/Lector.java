@@ -8,7 +8,7 @@ import java.util.Scanner;
  * @version (a version number or a date)
  */
 public class Lector {
-
+    //quita los espacios
     public String quitarEspacios(String ecua){
         String resultado = "";
         for (int i = 0; i < ecua.length(); i++) {
@@ -25,6 +25,7 @@ public class Lector {
     }
 
     public Ecuacion leerDeArchivo(String nombre){
+        //lee archivos try catch para evitar errores
         try {
             File myObj = new File("Archivos/"+nombre);
             Scanner myReader = new Scanner(myObj);
