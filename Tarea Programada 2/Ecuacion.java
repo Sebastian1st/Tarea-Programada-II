@@ -41,43 +41,46 @@ public class Ecuacion{
     }
 
     public void imprimirEcuacion(){
+        imprimirEcuacion_aux(root, 0);
+    }
 
-        Nodo current = this.root;
-        int ind = 0;
-        while(current != null){
+    public void imprimirEcuacion_aux(Nodo actual, int ind){
 
-            if(current.incognita.equals("") || current.potencia == 0){
-
-                if(current.valor < 0){
-                    System.out.print(Integer.toString(current.valor));
-                }
-                else{
-                    System.out.print("+"+Integer.toString(current.valor));
-                }
-
-            }
-            else {
-
-                if (current.valor < 0) {
-                    System.out.print(Integer.toString(current.valor) + current.incognita + "^" + Integer.toString(current.potencia));
-                    if(ind == 0){
-                        ind+=1;
-                    }
-                } else {
-                    if(ind == 0){
-                        System.out.print(Integer.toString(current.valor) + current.incognita + "^" + Integer.toString(current.potencia));
-                        ind +=1;
-                    }
-                    else {
-                        System.out.print("+" + Integer.toString(current.valor) + current.incognita + "^" + Integer.toString(current.potencia));
-                    }
-                }
-
-            }
-            current = current.next;
-
+        if(actual == null){
+            return;
         }
 
+        if(actual.incognita.equals("") || actual.potencia == 0){
+
+            if(actual.valor < 0){
+                System.out.print(Float.toString(actual.valor));
+            }
+            else{
+                System.out.print("+"+Float.toString(actual.valor));
+            }
+
+        }
+        else {
+
+            if (actual.valor < 0) {
+                System.out.print(Float.toString(actual.valor) + actual.incognita + "^" + Integer.toString(actual.potencia));
+                if(ind == 0){
+                    ind+=1;
+                }
+            } else {
+                if(ind == 0){
+                    System.out.print(Float.toString(actual.valor) + actual.incognita + "^" + Integer.toString(actual.potencia));
+                    ind +=1;
+                }
+                else {
+                    System.out.print("+" + Float.toString(actual.valor) + actual.incognita + "^" + Integer.toString(actual.potencia));
+                }
+            }
+
+        }
+        actual = actual.next;
+
+        imprimirEcuacion_aux(actual,ind);
     }
 
     public Ecuacion simplificar(){
@@ -114,6 +117,48 @@ public class Ecuacion{
 
     }
 
+    public String aString(){
+        String ecuacion = "";
+        return aString_aux(root, 0, ecuacion);
+    }
+
+    private String aString_aux(Nodo actual, int ind, String ecuacion){
+        if(actual == null){
+            return ecuacion;
+        }
+
+        if(actual.incognita.equals("") || actual.potencia == 0){
+
+            if(actual.valor < 0){
+                ecuacion += Float.toString(actual.valor);
+            }
+            else{
+                ecuacion += ("+"+Float.toString(actual.valor));
+            }
+
+        }
+        else {
+
+            if (actual.valor < 0) {
+                ecuacion += (Float.toString(actual.valor) + actual.incognita + "^" + Integer.toString(actual.potencia));
+                if(ind == 0){
+                    ind+=1;
+                }
+            } else {
+                if(ind == 0){
+                    ecuacion += (Float.toString(actual.valor) + actual.incognita + "^" + Integer.toString(actual.potencia));
+                    ind +=1;
+                }
+                else {
+                    ecuacion += ("+" + Float.toString(actual.valor) + actual.incognita + "^" + Integer.toString(actual.potencia));
+                }
+            }
+
+        }
+        actual = actual.next;
+
+        return aString_aux(actual,ind, ecuacion);
+    }
 
     public Nodo getNodo(int ind){
         Nodo actual = root;

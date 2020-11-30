@@ -2,12 +2,12 @@ package com.company;
 
 public class Nodo{
 
-    int valor;
+    float valor;
     String incognita;
     int potencia;
     Nodo next;
 
-    Nodo(int valor, String variable, int potencia){
+    Nodo(float valor, String variable, int potencia){
         this.valor = valor;
         this.incognita = variable;
         this.potencia = potencia;
@@ -16,15 +16,15 @@ public class Nodo{
 
     public void imprimirNodo(){
 
-        System.out.println(Integer.toString(this.valor)+this.incognita+"^"+Integer.toString(this.potencia));
+        System.out.println(Float.toString(this.valor)+this.incognita+"^"+Integer.toString(this.potencia));
 
     }
 
-    public int getValor() {
+    public float getValor() {
         return valor;
     }
 
-    public void setValor(int valor) {
+    public void setValor(float valor) {
         this.valor = valor;
     }
 

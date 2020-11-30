@@ -1,6 +1,7 @@
 package com.company;
 
 import javax.annotation.processing.SupportedSourceVersion;
+import java.awt.*;
 
 public class Calculadora {
 
@@ -20,7 +21,7 @@ public class Calculadora {
             return this.multiplicarEcuaciones(ecua1, ecua2);
         }
         else{
-            //MANEJAR ERROR >>>> OPERADOR NO SOPORTADO
+            System.out.println("Error: Operador no soportado. Solamente se permiten sumas, restas, multiplicaciones y divisiones");
             return null;
         }
     }
@@ -73,7 +74,6 @@ public class Calculadora {
 
     }
 
-
     private Ecuacion multiplicarEcuaciones(Ecuacion ecua1, Ecuacion ecua2){
 
         Ecuacion resultado = new Ecuacion();
@@ -82,13 +82,11 @@ public class Calculadora {
 
             for (int j = 0; j < ecua2.tamano; j++) {
 
-                int valor = ecua1.getNodo(i).valor*ecua2.getNodo(j).valor;
+                float valor = ecua1.getNodo(i).valor*ecua2.getNodo(j).valor;
 
                 int potencia = ecua1.getNodo(i).potencia+ecua2.getNodo(j).potencia;
 
                 Nodo nuevoNodo = new Nodo(valor,"x", potencia);
-
-                nuevoNodo.imprimirNodo();
                 resultado.agregarNodo(nuevoNodo);
 
             }
@@ -102,7 +100,27 @@ public class Calculadora {
     }
 
     private Ecuacion dividirEcuaciones(Ecuacion ecua1, Ecuacion ecua2){
-        return null;
+
+        if(ecua1.tamano > 1 || ecua2.tamano > 1){
+
+            System.out.println("Error en la division: Ambas ecuaciones deben ser monomios");
+            return null;
+        }
+
+        else{
+
+            Ecuacion resultado = new Ecuacion();
+
+            float valor = ecua1.getNodo(0).valor/ecua2.getNodo(0).valor;
+            int potencia = ecua1.getNodo(0).potencia-ecua2.getNodo(0).potencia;
+
+
+            Nodo nuevoNodo = new Nodo(valor,"x",potencia);
+            resultado.agregarNodo(nuevoNodo);
+
+            return resultado;
+
+        }
     }
 
 

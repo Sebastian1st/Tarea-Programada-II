@@ -9,12 +9,25 @@ public class Main {
 
         Lector lector = new Lector();
 
-        ecua = lector.separarElementos("4x^2-5x^1+3");
-        Ecuacion ecua2 = lector.separarElementos("5x^3-4x^2+10x^1");
+        ecua = lector.separarElementos("4x^2");
+        Ecuacion ecua2 = lector.separarElementos("5x^3");
 
         Calculadora calcu = new Calculadora();
 
-        Ecuacion resultado = calcu.operar(ecua, ecua2, "*");
-        resultado.imprimirEcuacion();
+        Ecuacion resultado = calcu.operar(ecua, ecua2, "/");
+
+
+
+
+        try{
+            System.out.println(resultado.aString());
+        }
+        catch (Exception e){
+            System.err.println(e);
+        }
+
+        Escritor escritor = new Escritor();
+        escritor.escribir("nombre", ecua, ecua2, "/", resultado);
+
     }
 }
