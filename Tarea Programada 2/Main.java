@@ -9,10 +9,12 @@ public class Main {
 
         Lector lector = new Lector();
 
-        ecua = lector.separarElementos("1x^2-3x^2-4x^1-5x^1-4");
+        ecua = lector.separarElementos("4x^2-5x^1+3");
+        Ecuacion ecua2 = lector.separarElementos("5x^3-4x^2+10x^1");
 
-        Ecuacion simplificada = ecua.simplificar();
+        Calculadora calcu = new Calculadora();
 
-        simplificada.imprimirEcuacion();
+        Ecuacion resultado = calcu.operar(ecua, ecua2, "*");
+        resultado.imprimirEcuacion();
     }
 }

@@ -4,30 +4,6 @@ public class Ecuacion{
     Nodo root;
     int tamano = 0;
 
-    public Nodo getNodo(int ind){
-        Nodo actual = root;
-        int cont = 0;
-        while(cont != ind){
-            actual = actual.next;
-            cont +=1;
-        }
-
-        return actual;
-    }
-
-    public int getMaxExponente(){
-
-        int max = 0;
-
-        for (int i = 0; i < this.tamano; i++) {
-            if(max < this.getNodo(i).potencia){
-                max = this.getNodo(i).potencia;
-            }
-        }
-
-        return max;
-    }
-
     public void agregarNodo(int valor, String variable, int potencia){
         Nodo nuevoNodo = new Nodo(valor, variable, potencia);
 
@@ -84,6 +60,9 @@ public class Ecuacion{
 
                 if (current.valor < 0) {
                     System.out.print(Integer.toString(current.valor) + current.incognita + "^" + Integer.toString(current.potencia));
+                    if(ind == 0){
+                        ind+=1;
+                    }
                 } else {
                     if(ind == 0){
                         System.out.print(Integer.toString(current.valor) + current.incognita + "^" + Integer.toString(current.potencia));
@@ -134,5 +113,31 @@ public class Ecuacion{
         return resultado;
 
     }
+
+
+    public Nodo getNodo(int ind){
+        Nodo actual = root;
+        int cont = 0;
+        while(cont != ind){
+            actual = actual.next;
+            cont +=1;
+        }
+
+        return actual;
+    }
+
+    private int getMaxExponente(){
+
+        int max = 0;
+
+        for (int i = 0; i < this.tamano; i++) {
+            if(max < this.getNodo(i).potencia){
+                max = this.getNodo(i).potencia;
+            }
+        }
+
+        return max;
+    }
+
 
 }

@@ -19,8 +19,6 @@ public class Lector {
 
     public Ecuacion separarElementos(String ecua){
 
-        System.out.println(ecua);
-
         Ecuacion ecuacion = new Ecuacion();
 
         String operadores[] = {"+", "-", "*", "/"};

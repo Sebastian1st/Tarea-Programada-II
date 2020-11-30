@@ -14,6 +14,12 @@ public class Nodo{
         this.next = null;
     }
 
+    public void imprimirNodo(){
+
+        System.out.println(Integer.toString(this.valor)+this.incognita+"^"+Integer.toString(this.potencia));
+
+    }
+
     public int getValor() {
         return valor;
     }
