@@ -9,9 +9,10 @@ public class Main {
 
         Lector lector = new Lector();
 
-        ecua = lector.separarElementos("1x^2-3x^5-4x^1-5x^3-4");
+        ecua = lector.separarElementos("1x^2-3x^2-4x^1-5x^1-4");
 
-        System.out.println(ecua.getNodo(4).potencia);
+        Ecuacion simplificada = ecua.simplificar();
 
+        simplificada.imprimirEcuacion();
     }
 }

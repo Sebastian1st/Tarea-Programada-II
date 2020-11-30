@@ -70,27 +70,27 @@ public class Ecuacion{
         int ind = 0;
         while(current != null){
 
-            if(current.incognita.equals("")){
+            if(current.incognita.equals("") || current.potencia == 0){
 
                 if(current.valor < 0){
-                    System.out.println(Integer.toString(current.valor));
+                    System.out.print(Integer.toString(current.valor));
                 }
                 else{
-                    System.out.println("+"+Integer.toString(current.valor));
+                    System.out.print("+"+Integer.toString(current.valor));
                 }
 
             }
             else {
 
                 if (current.valor < 0) {
-                    System.out.println(Integer.toString(current.valor) + current.incognita + "^" + Integer.toString(current.potencia));
+                    System.out.print(Integer.toString(current.valor) + current.incognita + "^" + Integer.toString(current.potencia));
                 } else {
                     if(ind == 0){
-                        System.out.println(Integer.toString(current.valor) + current.incognita + "^" + Integer.toString(current.potencia));
+                        System.out.print(Integer.toString(current.valor) + current.incognita + "^" + Integer.toString(current.potencia));
                         ind +=1;
                     }
                     else {
-                        System.out.println("+" + Integer.toString(current.valor) + current.incognita + "^" + Integer.toString(current.potencia));
+                        System.out.print("+" + Integer.toString(current.valor) + current.incognita + "^" + Integer.toString(current.potencia));
                     }
                 }
 
@@ -101,13 +101,37 @@ public class Ecuacion{
 
     }
 
-    public void simplificar(){
+    public Ecuacion simplificar(){
 
         Ecuacion resultado = new Ecuacion();
 
-        int exponente = 0;
+        int exponente = getMaxExponente();
 
 
+
+        while(exponente != -1){
+            //Operar los nodos
+            Nodo nodoRes = new Nodo(0,"x", exponente);
+
+            for (int i = 0; i < this.tamano; i++) {
+
+                Nodo actual = this.getNodo(i);
+                if(actual.potencia == exponente){
+
+                    nodoRes.valor += actual.valor;
+
+                }
+            }
+
+            if(nodoRes.valor != 0) {
+                resultado.agregarNodo(nodoRes);
+            }
+
+            exponente-=1;
+
+        }
+
+        return resultado;
 
     }
 
